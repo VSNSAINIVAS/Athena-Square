@@ -1,0 +1,10 @@
+.text1{
+    background-image: linear-gradient(60deg,#ff3a7c,#741eff);
+    background: -webkit-linear-gradient(#ff3a7c, #741eff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.video{
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
