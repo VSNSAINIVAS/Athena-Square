@@ -1,0 +1,11 @@
+.navtext:hover{
+    background-color: rgba(189, 214, 217, 0.2);
+    border-radius: 2%;
+}
+
+.button-3{
+    background-image: linear-gradient(135deg,#0084e9,#762cec);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5%;
+}
