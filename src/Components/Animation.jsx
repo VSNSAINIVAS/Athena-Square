@@ -10,7 +10,7 @@ export default function Animation(){
     const [data, setData] = useState();
     const {scrollPos} = useStateContext();
     const [videoNum, setVideoNum] = useState(1);
-    const [position, setPosition] = useState("static");
+    const [position, setPosition] = useState("relative");
 
     useEffect(()=>{
         async function dataset(){
@@ -39,10 +39,11 @@ export default function Animation(){
     useEffect(()=>{
         
         const time = setInterval(() => {
-            if(scrollPos >= 460) 
+            console.log(position);
+            if(scrollPos >= 800) 
                 setPosition("fixed");
             else
-                setPosition("static");
+                setPosition("relative");
         }, 0);
         return () => clearInterval(time);
     })
@@ -57,6 +58,11 @@ export default function Animation(){
                         <h5>{data!==undefined?<span className="text1">{data.texts[0].heading}</span>:"Hello"}</h5>
                         <h2>{data!==undefined?data.texts[0].subHeading: "World"}</h2>
                         <p>{data!==undefined?data.texts[0].description: "describe"}</p>
+                        {position === "relative" && <div style={{position: "relative", top: "-300px", left: "488px"}}>
+                        <video width="500px" height="500px" style={{marginLeft: "200px", borderRadius: "2%"}} autoPlay loop muted playsInline className="video">
+                            <source src={Video1} type="video/mp4"/>
+                        </video>
+                            </div>}
                     </div>
                     <div style={{backgroundColor: "white", marginLeft: "25px", marginTop: "280px"}}>
                         <h5>{data!==undefined?<span className="text1">{data.texts[1].heading}</span>:"Hello"}</h5>
@@ -69,7 +75,7 @@ export default function Animation(){
                         <p>{data!==undefined?data.texts[2].description: "describe"}</p>
                     </div>
                 </div>
-                <div style={{display: "inline-block",position: position, borderRadius: "2%", top: "50px"}}>
+                <div style={{display: "inline-block",position: position, borderRadius: "2%", top:"50px"}}>
                     <div style={{marginBottom : "50px", marginLeft: "10px", borderRaius: "2%"}}>
                         {videoNum === 1&&<video width="500px" height="500px" style={{marginLeft: "200px", borderRadius: "2%"}} autoPlay loop muted playsInline className="video">
                             <source src={Video1} type="video/mp4"/>
